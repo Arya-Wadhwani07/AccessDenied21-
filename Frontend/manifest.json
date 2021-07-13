@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "CaptionIt Extension",
+    "description": "Caption your insta pics with ease.",
+    "version": "1.0",
+    "incognito": "spanning",
+    "permissions": ["tabs", "contextMenus", "storage", "http://localhost/*"],
+    "icons": {
+        "16": "assets/16x16.png",
+        "48": "assets/48x48.png",
+        "128": "assets/128x128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.instagram.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "assets/16x16.png",
+            "48": "assets/48x48.png",
+            "128": "assets/128x128.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "CaptionIt"
+    }
+}

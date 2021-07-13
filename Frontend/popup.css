@@ -1,0 +1,189 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;500;700&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import url("http://fonts.cdnfonts.com/css/sansation"); */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+:root {
+    --background-color: #383838;
+    --secondary-color: #4c4c4c;
+    --quote-background: #686868;
+    --seperator-background: #cecece;
+    --quote-color: #fff;
+    --seperator-color: #686868;
+}
+body {
+    width: 300px;
+    height: 500px;
+    background-color: var(--background-color);
+    color: var(--quote-color);
+    font-family: "Raleway", sans-serif;
+    font-size: 1.1rem;
+}
+header {
+    display: flex;
+    margin: 10px;
+    /* padding: 8px; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--background-color);
+    font-weight: 400;
+}
+.quote-container {
+    margin: 10px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote {
+    margin: 15px;
+    padding-top: 5px;
+    background-color: var(--quote-background);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.quote-text {
+    text-align: center;
+    margin: 5px 0px 10px 0px;
+    max-height: 200px;
+    overflow-y: scroll;
+    font-weight: 200;
+    /* text-overflow: ellipsis; */
+}
+.quote-author {
+    display: block;
+    float: right;
+    text-align: right;
+    font-weight: 300;
+}
+body::-webkit-scrollbar-track,
+.quote-text::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar,
+.quote-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.72, var(--seperator-background)),
+        color-stop(0.44, var(--quote-background))
+    );
+}
+.quote-text::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    /* background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.72, var(--seperator-background)),
+        color-stop(0.44, var(--secondary-color))
+    ); */
+    background-color: var(--seperator-color);
+}
+.seperator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    background-color: var(--seperator-background);
+    color: var(--seperator-color);
+    font-size: 0.8rem;
+}
+.loading {
+}
+.copy-button {
+    margin: 4px;
+}
+.copy-button:focus {
+    outline: none;
+}
+.remove {
+    display: none;
+}
+
+/* From https://www.w3schools.com/howto/howto_js_snackbar.asp */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 1s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
